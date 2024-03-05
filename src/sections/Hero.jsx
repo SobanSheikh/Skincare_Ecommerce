@@ -1,42 +1,51 @@
-import React from 'react';
 import { arrowRight } from '../assets/icons';
 import { bigShoe1 } from '../assets/images';
 import Button from '../components/Button';
 import { shoes, statistics } from '../constants';
 import ShoeCard from '../components/ShoeCard';
-import { useState } from 'react';
 import Carousel from "react-multi-carousel";
 import Slider from 'react-slick';
+import React, { useState, useEffect,useRef} from 'react';
+import axios from 'axios';
+import Flickity from 'flickity';
 
 
 const Hero = () => {
   const [bigShoeImg, setbigShoeImg] = useState(bigShoe1);
-  // const responsive = {
-  //   desktop: {
-  //     breakpoint: { max: 2500, min: 1024 },
-  //     items: 3,
-  //     // slidesToSlide: 3 // optional, default to 1.
-  //   },
-  //   tablet: {
-  //     breakpoint: { max: 1024, min: 464 },
-  //     items: 2,
-  //     slidesToSlide: 2 // optional, default to 1.
-  //   },
-  //   mobile: {
-  //     breakpoint: { max: 464, min: 0 },
-  //     items: 1,
-  //     slidesToSlide: 1 // optional, default to 1.
-  //   }
-  // };
-  const settings = {
-    dots: false,
-    infinite: false,
-    // speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: false,
-    centerPadding: '60px',
+  const [products, setProducts] = useState([]);
+  const flickityRef = useRef(null);
+
+  const options = {
+    method: 'GET',
+    url: 'https://product-lookup-by-upc-or-ean.p.rapidapi.com/code/829576019311',
+    headers: {
+      'X-RapidAPI-Key': 'd46ce10e16mshbc316b6599a60fep1b489fjsnf7813c117cc3',
+      'X-RapidAPI-Host': 'product-lookup-by-upc-or-ean.p.rapidapi.com'
+    }
   };
+  
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.request(options);
+        setProducts(response.data.product);
+        // if (flickityRef.current) {
+        //   new Flickity(flickityRef.current, {
+        //     // Flickity options here
+        //     cellAlign: 'left',
+        //     contain: true,
+        //     wrapAround: true,
+        //   });
+        // }
+        console.log(response.data.product)
+      } catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <section id='home'
       className='w-full flex xl:flex-row
@@ -102,16 +111,16 @@ const Hero = () => {
           height={500}
           className='object-contain relative
         z-10'/>
-        <div className='flex sm:gap-6 
+        <div ref={flickityRef} className='carousel flex sm:gap-6 
         gap-4 absolute -bottom-[5%]
         sm:left-[10%] max-sm:px-6'>
          {/* <Slider {...settings}> */}
-            {shoes.map((shoe, index) => (
+            {products.map((product, index) => (
               <div key={index}>
                 <ShoeCard
-                  imgURL={shoe}
+                  imgUrl={product}
                   changeBigShoeImage=
-                  {(shoe) => { setbigShoeImg(shoe) }}
+                  {(product) => { setbigShoeImg(product) }}
                   bigShoeImg={bigShoeImg}
                 />
 

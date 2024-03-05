@@ -1,17 +1,17 @@
 import React from 'react'
 
-const ShoeCard = ({imgURL, changeBigShoeImage
+const ShoeCard = ({imageUrl, changeBigShoeImage
 ,bigShoeImg}) => {
 
     const handleClick=()=>{
-        if(bigShoeImg!== imgURL.bigShoe){
-            changeBigShoeImage(imgURL.bigShoe)
+        if(bigShoeImg!== imageUrl.imageUrl){
+            changeBigShoeImage(imageUrl.imageUrl)
         }
     }
   return (
     <div className=
     {`border-2 rounded-xl
-    ${bigShoeImg===imgURL.bigShoe
+    ${bigShoeImg===imageUrl.imageUrl
         ? 'border-coral-red'
         : 'border-transparent'
     
@@ -22,7 +22,7 @@ const ShoeCard = ({imgURL, changeBigShoeImage
         items-center bg-card bg-center bg-cover
         sm:w-40 sm:h-40 rounded-xl max-sm:p-4'>
             <img
-            src={imgURL.thumbnail}
+            src={imageUrl.imageUrl}
             alt='shoe collection'
             height={103}
             width={127}
