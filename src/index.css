@@ -5,6 +5,35 @@
 @tailwind components;
 @tailwind utilities;
 
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-container {
+  width: 100%;
+}
+
+.carousel-container .react-multi-carousel-list {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container .react-multi-carousel-track {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-container .react-multi-carousel-item {
+  flex: 0 0 auto;
+  width: calc(100% / 3); /* Display 3 items at a time */
+}
+
+.carousel-container .react-multi-carousel-dot-list {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -4,14 +4,14 @@ const ShoeCard = ({imageUrl, changeBigShoeImage
 ,bigShoeImg}) => {
 
     const handleClick=()=>{
-        if(bigShoeImg!== imageUrl.imageUrl){
-            changeBigShoeImage(imageUrl.imageUrl)
+        if(bigShoeImg!== imageUrl.jawSummary.backgroundImage.url){
+            changeBigShoeImage(imageUrl.jawSummary.backgroundImage.url)
         }
     }
   return (
     <div className=
     {`border-2 rounded-xl
-    ${bigShoeImg===imageUrl.imageUrl
+    ${bigShoeImg===imageUrl.jawSummary.backgroundImage.url
         ? 'border-coral-red'
         : 'border-transparent'
     
@@ -22,7 +22,7 @@ const ShoeCard = ({imageUrl, changeBigShoeImage
         items-center bg-card bg-center bg-cover
         sm:w-40 sm:h-40 rounded-xl max-sm:p-4'>
             <img
-            src={imageUrl.imageUrl}
+            src={imageUrl.jawSummary.backgroundImage.url}
             alt='shoe collection'
             height={103}
             width={127}

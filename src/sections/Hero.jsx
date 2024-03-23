@@ -3,46 +3,98 @@ import { bigShoe1 } from '../assets/images';
 import Button from '../components/Button';
 import { shoes, statistics } from '../constants';
 import ShoeCard from '../components/ShoeCard';
-import Carousel from "react-multi-carousel";
 import Slider from 'react-slick';
-import React, { useState, useEffect,useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import Flickity from 'flickity';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 
 const Hero = () => {
   const [bigShoeImg, setbigShoeImg] = useState(bigShoe1);
   const [products, setProducts] = useState([]);
   const flickityRef = useRef(null);
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  };
 
   const options = {
     method: 'GET',
-    url: 'https://product-lookup-by-upc-or-ean.p.rapidapi.com/code/829576019311',
+    url: 'https://netflix54.p.rapidapi.com/search/aaa',
+    params: {
+      query: 'stranger',
+      offset: '0',
+      limit_titles: '50',
+      limit_suggestions: '20',
+      lang: 'en'
+    },
     headers: {
       'X-RapidAPI-Key': 'd46ce10e16mshbc316b6599a60fep1b489fjsnf7813c117cc3',
-      'X-RapidAPI-Host': 'product-lookup-by-upc-or-ean.p.rapidapi.com'
+      'X-RapidAPI-Host': 'netflix54.p.rapidapi.com'
     }
   };
-  
+ 
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.request(options);
+      setProducts(response.data.titles);
+      // flickityRef.current = new Flickity('.carousel', {
+      //   contain: true,
+      //   prevNextButtons: true,
+      //   pageDots: false,
+      //   groupCells: true,
+      //   cellAlign: 'left',
+      //   adaptiveHeight: true,
+      //   wrapAround: true,
+      //   draggable: true
+      // });
+      console.log(response.data)
+      
+    } catch (error) {
+      console.error('Error fetching data: ', error);
+    }
+  };
+  // Next and Previous Button Handlers
+  // const next = () => {
+  //   if (flickityRef.current) {
+  //     flickityRef.current.next();
+  //   }
+  // };
+
+  // const previous = () => {
+  //   if (flickityRef.current) {
+  //     flickityRef.current.previous();
+  //   }
+  // };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.request(options);
-        setProducts(response.data.product);
-        // if (flickityRef.current) {
-        //   new Flickity(flickityRef.current, {
-        //     // Flickity options here
-        //     cellAlign: 'left',
-        //     contain: true,
-        //     wrapAround: true,
-        //   });
-        // }
-        console.log(response.data.product)
-      } catch (error) {
-        console.error('Error fetching data: ', error);
-      }
-    };
+
 
     fetchData();
   }, []);
@@ -99,7 +151,7 @@ const Hero = () => {
 
 
       </div>
-      <div className='relative flex-1
+      <div className=' flex-col
       flex justify-center items-center
       xl:min-h-screen max-xl:py-40 bg-primary
       bg-hero bg-cover bg-center'
@@ -111,14 +163,15 @@ const Hero = () => {
           height={500}
           className='object-contain relative
         z-10'/>
-        <div ref={flickityRef} className='carousel flex sm:gap-6 
-        gap-4 absolute -bottom-[5%]
-        sm:left-[10%] max-sm:px-6'>
-         {/* <Slider {...settings}> */}
+
+        <div className='flex flex-row justify-center
+        items-center'>
+         <Carousel responsive={responsive}>
+            {/* <Slider {...settings}> */}
             {products.map((product, index) => (
-              <div key={index}>
+              <div key={index} className='' >
                 <ShoeCard
-                  imgUrl={product}
+                  imageUrl={product}
                   changeBigShoeImage=
                   {(product) => { setbigShoeImg(product) }}
                   bigShoeImg={bigShoeImg}
@@ -129,9 +182,11 @@ const Hero = () => {
 
             ))}
             {/* </Slider> */}
+            </Carousel>
+         
 
-          
         </div>
+
       </div>
 
 
