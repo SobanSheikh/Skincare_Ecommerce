@@ -4,7 +4,6 @@ import Button from '../components/Button';
 import { shoes, statistics } from '../constants';
 import ShoeCard from '../components/ShoeCard';
 import { a9,a3,a1 } from '../assets/images';
-import Slider from 'react-slick';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { skinProducts } from '../constants';
