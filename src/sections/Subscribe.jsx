@@ -23,7 +23,7 @@ const Subscribe = () => {
         sm:border sm:border-slate-gray rounded-full'>
           <input
           type='text'
-          placeholder='subscribe@nike.com'
+          placeholder='subscribe@guzel.com'
           className='input' />
           <div className='flex 
           max-sm:justify-end items-center

@@ -8,11 +8,14 @@ const SpecialOffer = () => {
     <section className='flex justify-wrap
     items-center max-xl:flex-col-reverse
     gap-10 max-container'>
-      <div className='flex-1 '>
+      <div className='flex-1 relative'>
         <img src={offer}
-          width={773}
-          height={687}
-          className='object-contain w-full' />
+          width={500}
+          height={500}
+          className='object-contain  rounded-xl' />
+          <div className=' bg-gray-300 rounded-full w-20 h-20 text-center bg-opacity-50
+           p-4 absolute top-[42%] right-[22%] font-palanquin font-bold text-gray-700'>
+            50% off</div>
 
       </div>
 
@@ -25,12 +28,12 @@ const SpecialOffer = () => {
             className="text-coral-red">
             Special  </span> Offer
         </h2>
-        <p className='mt-4
-        lg:max-w-lg info-text'>Ensuring premium comfort and style,
-          our meticulously crafted footwear is designed to elevate
-          your experience, providing you with unmatched quality, innovation, and a touch of elegance.
+        <p className='mt-4 text-justify
+        lg:max-w-lg info-text'>Indulge in a limited-time skincare
+         experience with our exclusive offer. Elevate your routine with premium products,
+         exceptional savings, and a touch of luxury.
         </p>
-        <p className="mt-6 lg:max-w-lg info text">Our dedication to detail and excellence ensures your
+        <p className="mt-6 lg:max-w-lg info-text">Our dedication to detail and excellence ensures your
           satisfaction
         </p>
 

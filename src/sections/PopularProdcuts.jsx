@@ -18,9 +18,8 @@ const PopularProdcuts = ({showDetails1,handleClick1}) => {
         <h2 className='text-4xl 
         font-palanquin font-bold'>Our <span className='text-coral-red'>
         Popular </span>Products</h2>
-        <p className='lg:max-w-lg mt-2 font-montserrat text-slate-gray'>Experience esteem quality foot-wear with out
-          sought-after selections. Discover a world of comfort
-          and value
+        <p className='lg:max-w-lg mt-2 font-montserrat text-slate-gray'>Reveal your natural glow with our revitalizing skincare solutions.
+        Embrace the beauty of radiant, healthy skin.
         </p>
 
       </div>
