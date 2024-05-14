@@ -25,7 +25,7 @@ const SuperQuality = () => {
          skincare products are designed to enhance your beauty routine,
           offering exceptional quality, innovative ingredients, and a touch of indulgence..
         </p>
-        <p className="mt-6 lg:max-w-lg info text">Our dedication to detail and excellence ensures your
+        <p className="mt-6 lg:max-w-lg info-text">Our dedication to detail and excellence ensures your
           satisfaction
         </p>
 

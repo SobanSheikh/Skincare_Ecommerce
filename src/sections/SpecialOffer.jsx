@@ -12,7 +12,7 @@ const SpecialOffer = () => {
         <img src={offer}
           width={500}
           height={500}
-          className='object-contain  rounded-xl' />
+          className='object-contain  rounded-xl shadow-md' />
           <div className=' bg-gray-300 rounded-full w-20 h-20 text-center bg-opacity-50
            p-4 absolute top-[42%] right-[22%] font-palanquin font-bold text-gray-700'>
             50% off</div>

@@ -17,17 +17,16 @@ export const skinProducts = [
         name: "Vit C Serum",
         benefits: {
             part1: [
-                "Acne Soothing",
-                "Acne Soothing",
-                "Acne Soothing",
-                "Acne Soothing"
+                "Brightens complexion",
+                "Fades dark spots",
+                "Boosts collagen",
+                "Evens skin tone"
             ],
             part2: [
-                "Acne Soothing",
-                "Acne Soothing",
-                "Acne Soothing",
-                "Acne Soothing"
-            ]
+                "Enhances radiance",
+                "Protects against UV damage",
+                "Reduces signs of aging"
+                    ]
         }
 
         ,
@@ -191,12 +190,10 @@ export const footerLinks = [
     {
         title: "Products",
         links: [
-            { name: "Air Force 1", link: "/" },
-            { name: "Air Max 1", link: "/" },
-            { name: "Air Jordan 1", link: "/" },
-            { name: "Air Force 2", link: "/" },
-            { name: "Nike Waffle Racer", link: "/" },
-            { name: "Nike Cortez", link: "/" },
+            { name: "Vit C Serum", link: "/" },
+            { name: "Papaya Skin Serum", link: "/" },
+            { name: "Green Tea Toner", link: "/" },
+            { name: "Cleansing Milk", link: "/" }
         ],
     },
     {
@@ -212,8 +209,8 @@ export const footerLinks = [
     {
         title: "Get in touch",
         links: [
-            { name: "customer@nike.com", link: "mailto:customer@nike.com" },
-            { name: "+92554862354", link: "tel:+92554862354" },
+            { name: "customer@guzel.com", link: "mailto:customer@guzel.com" },
+            { name: "+92554862314", link: "tel:+92554861154" },
         ],
     },
 ];

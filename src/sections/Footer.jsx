@@ -2,6 +2,7 @@ import React from 'react'
 import { copyrightSign } from '../assets/icons'
 import { footerLogo } from '../assets/images'
 import { footerLinks, socialMedia } from '../constants'
+import { logo } from '../assets/images'
 
 const Footer = () => {
   return (
@@ -13,21 +14,22 @@ const Footer = () => {
 
        <div className='flex flex-col
        items-start'>
+        <div className='rounded-full bg-gray-100'>
         <a href='/'>
           <img
-          src={footerLogo}
+          src={logo}
           width={150}
           height={46} />
 
         </a>
+        </div>
 
         <p
-        className='mt-6 text-base
+        className='mt-6 text-base text-justify
         leading-7 font-montserrat text-white-400
         sm:max-w-sm'>
-          Get shoes ready for the new term
-          at your nearest nike store. Find you perfect size
-          in Store. Get Rewards
+          Your best skin starts here.
+          Experience the difference with our premium skincare products
         </p>
         <div
         className='flex items-center gap-5 mt-8'>

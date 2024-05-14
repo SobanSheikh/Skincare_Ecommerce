@@ -1,7 +1,7 @@
 import React from 'react'
 import { a1 } from '../assets/images'
 import { useCart } from './CartContext';
-const Product_Details = ({addToCart1, product2, handleClick3 }) => {
+const Product_Details = ({ product2, handleClick3 }) => {
 
 
   const {addItemToCart} = useCart();

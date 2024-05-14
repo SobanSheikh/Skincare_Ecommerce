@@ -41,7 +41,7 @@ const PopularProdcuts = ({showDetails1,handleClick1}) => {
       </div>
 
       
-      {showDetails1 && <Product_Details addToCart1={fillCart} product2={detailProduct} handleClick3={handleClick1}/>}
+      {showDetails1 && <Product_Details  product2={detailProduct} handleClick3={handleClick1}/>}
     </section>
   )
 }
