@@ -1,11 +1,112 @@
 import { facebook, instagram, shieldTick, support, truckFast, twitter } from "../assets/icons";
 import { bigShoe1, bigShoe2, bigShoe3, customer1, customer2, shoe4, shoe5, shoe6, shoe7, thumbnailShoe1, thumbnailShoe2, thumbnailShoe3 } from "../assets/images";
+import { logo, a1, a2, a3, a4, a5, a6, a7, a8, a9, tr_1, tr_2, tr_3 } from "../assets/images";
+
 
 export const navLinks = [
     { href: "#home", label: "Home" },
     { href: "#about-us", label: "About Us" },
     { href: "#products", label: "Products" },
     { href: "#contact-us", label: "Contact Us" },
+];
+
+
+export const skinProducts = [
+    {
+        id: 1,
+        name: "Vit C Serum",
+        benefits: {
+            part1: [
+                "Acne Soothing",
+                "Acne Soothing",
+                "Acne Soothing",
+                "Acne Soothing"
+            ],
+            part2: [
+                "Acne Soothing",
+                "Acne Soothing",
+                "Acne Soothing",
+                "Acne Soothing"
+            ]
+        }
+
+        ,
+        description: 'The unique selling proposition (USP) of an organic skincare brand typically revolves around its commitment to using natural and chemical-free ingredients, promoting sustainability, and emphasizing the benefits of a healthier and environmentally conscious approach to skincare. It may also highlight cruelty-free practices and the avoidance of synthetic',
+        ingredients:'Aqua,Butylene Glycol,Diglycerin, Hydrolyzed Elastin,Beta-glucan, Niacinamide, 3-o-ethyl Ascorbic Acid, Allantoin, Carbomer, Triethanolamine, PEG-40 Hydrogenated Castor Oil, Ethylhexylglycerin,Parfum, Disodium EDTA,DMDM.', 
+        usage:'In the Morning etc etc etc etc etc .',
+        price: 10.99,
+        imageUrl: a1,
+        quantity:1
+    },
+
+    {
+        id: 2,
+        name: "Papaya Skin Serum",
+        benefits: {
+            part1: [
+                "Acne Soothing",
+                "Supports Healthy Skin Aging",
+                "Skin Brightening",
+                "Reducing Hyperpigmentation"
+            ],
+            part2: [
+                "Squeeze 2-3 drops ",
+                "No need to massage the oil ",
+                "Use on alternative nights"
+            ]
+        },
+        description: 'The unique selling proposition (USP) of an organic skincare brand typically revolves around its commitment to using natural and chemical-free ingredients, promoting sustainability, and emphasizing the benefits of a healthier and environmentally conscious approach to skincare. It may also highlight cruelty-free practices and the avoidance of synthetic',
+       ingredients:'Aqua, Sodium Gluconate, 2-Bromo-2-Nitropropane-1, 3-Diol, Carbomer, Argan Oil, Hydroxyethyl Cellulose, Aloe Vera Extract, NeemExtract,Papaya (Carica Papaya) Extract, Orange Extract,(Punica Granatum), Sodium Ascorbyl Phosphate, Niacinamide, Hyaluronic Acid, Saccharide Isomerate, Pentylene Glycol, Butylene Glycol, D-Panthenol,',
+       usage:'In the Morning etc etc etc etc etc .', 
+       price: 10.99,
+        imageUrl: a2,
+        quantity:1
+    },
+    {
+        id: 3,
+        name: "Green Tea Toner ",
+        benefits: {
+            part1: [
+                "Hydrates & Purifies Skin",
+                "Treats Pimples",
+                "Tighten Pores",
+                "Deep Cleanses"
+            ],
+            part2: [
+                "Helps in reducing blackheads",
+                "No side effects",
+            ]
+        },
+
+        description: 'The unique selling proposition (USP) of an organic skincare brand typically revolves around its commitment to using natural and chemical-free ingredients, promoting sustainability, and emphasizing the benefits of a healthier and environmentally conscious approach to skincare. It may also highlight cruelty-free practices and the avoidance of synthetic',
+        ingredients:'Aqua (Water), Butylene Glycol, 1,2-Hexanediol, Glycerin, Pentylene Glycol, Sodium Hyaluronate, Centella Asiatica Extract, Houttuynia Cordata Extract, Camellia Sinensis Leal Extract, Green Tea Extract,Salix Nigra (Willow) Bark Extract, Punica Granatum Fruit Extract, Betaine',
+        usage:'In the Morning etc etc etc etc etc .',
+        price: 10.99,
+        imageUrl: a3,
+        quantity:1
+    },
+    {
+        id: 4,
+        name: "Cleansing Milk",
+        benefits: {
+            part1: [
+                "Removes impurities from the skin",
+                "Nourished and Glowing look"
+
+            ],
+            part2: [
+                "Massage your face gently ",
+                "Rinse off with lukewarm water ",
+                "No Side Effects "
+            ]
+        },
+        description: 'The unique selling proposition (USP) of an organic skincare brand typically revolves around its commitment to using natural and chemical-free ingredients, promoting sustainability, and emphasizing the benefits of a healthier and environmentally conscious approach to skincare. It may also highlight cruelty-free practices and the avoidance of synthetic',
+        usage:'In the Morning etc etc etc etc etc .',
+        ingredients:'Aqua (Water), Butylene Glycol, 1,2-Hexanediol, Glycerin, Pentylene Glycol, Sodium Hyaluronate, Centella Asiatica Extract, Houttuynia Cordata Extract, Camellia Sinensis Leal Extract, Green Tea Extract,Salix Nigra (Willow) Bark Extract, Punica Granatum Fruit Extract, Betaine',
+        price: 10.99,
+        imageUrl: a4,
+        quantity:1
+    }
 ];
 
 export const shoes = [

@@ -3,6 +3,7 @@ import { bigShoe1 } from '../assets/images';
 import Button from '../components/Button';
 import { shoes, statistics } from '../constants';
 import ShoeCard from '../components/ShoeCard';
+import { a9,a3,a1 } from '../assets/images';
 import Slider from 'react-slick';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
@@ -10,94 +11,17 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { skinProducts } from '../constants';
 
 
 const Hero = () => {
-  const [bigShoeImg, setbigShoeImg] = useState(bigShoe1);
+  const [bigShoeImg, setbigShoeImg] = useState(a1);
+  const [bigShoeDescp,setbigShoeDescp] = useState(skinProducts[0].benefits)
   const [products, setProducts] = useState([]);
-  const flickityRef = useRef(null);
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3
-  };
-
-  const options = {
-    method: 'GET',
-    url: 'https://netflix54.p.rapidapi.com/search/aaa',
-    params: {
-      query: 'stranger',
-      offset: '0',
-      limit_titles: '50',
-      limit_suggestions: '20',
-      lang: 'en'
-    },
-    headers: {
-      'X-RapidAPI-Key': 'd46ce10e16mshbc316b6599a60fep1b489fjsnf7813c117cc3',
-      'X-RapidAPI-Host': 'netflix54.p.rapidapi.com'
-    }
-  };
- 
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.request(options);
-      setProducts(response.data.titles);
-      // flickityRef.current = new Flickity('.carousel', {
-      //   contain: true,
-      //   prevNextButtons: true,
-      //   pageDots: false,
-      //   groupCells: true,
-      //   cellAlign: 'left',
-      //   adaptiveHeight: true,
-      //   wrapAround: true,
-      //   draggable: true
-      // });
-      console.log(response.data)
-      
-    } catch (error) {
-      console.error('Error fetching data: ', error);
-    }
-  };
-  // Next and Previous Button Handlers
-  // const next = () => {
-  //   if (flickityRef.current) {
-  //     flickityRef.current.next();
-  //   }
-  // };
-
-  // const previous = () => {
-  //   if (flickityRef.current) {
-  //     flickityRef.current.previous();
-  //   }
-  // };
-
-  useEffect(() => {
+  
 
 
-    fetchData();
-  }, []);
+  
   return (
     <section id='home'
       className='w-full flex xl:flex-row
@@ -107,8 +31,7 @@ const Hero = () => {
       <div className='relative
       xl:w-2/5 flex flex-col justify-center items-start
       w-full max-xl:padding-x pt-28'>
-        <p className='text-xl font-montserrat
-         text-coral-red'>Our Summer Collection</p>
+        
         <h1 className='mt-10 font-palanquin
         text-8xl max-sm:text-[72-px]
         max-sm:leading-[82] font-bold'>
@@ -117,9 +40,8 @@ const Hero = () => {
           xl:whitespace-nowrap
           relative z-10 pr-10'
           >The New Arrival</span>
-          <br />
-          <span className='text-coral-red inline-block
-          mt-3 '>Nike</span> Shoes
+          <br />of <span className='text-coral-red inline-block
+          mt-3 '>Skin </span> Care
 
         </h1>
         <p className='font-montserrat
@@ -151,40 +73,55 @@ const Hero = () => {
 
 
       </div>
-      <div className=' flex-col
-      flex justify-center items-center
-      xl:min-h-screen max-xl:py-40 bg-primary
-      bg-hero bg-cover bg-center'
+      <div className='relative flex-1 flex justify-center w-full
+       items-center xl:min-h-screen 
+        bg-center'
       >
         <img
           src={bigShoeImg}
           alt="shoe collection"
+
           width={610}
           height={500}
-          className='object-contain relative
-        z-10'/>
+          className='object-contain relative w-full  '/> 
+          {/* changes for shoes w-full no object contain */}
 
-        <div className='flex flex-row justify-center
-        items-center'>
-         <Carousel responsive={responsive}>
-            {/* <Slider {...settings}> */}
-            {products.map((product, index) => (
-              <div key={index} className='' >
-                <ShoeCard
-                  imageUrl={product}
-                  changeBigShoeImage=
-                  {(product) => { setbigShoeImg(product) }}
-                  bigShoeImg={bigShoeImg}
-                />
+          <div className='flex  flex-col p-2 bg-opacity-70 mt-14
+          -top-[-10%] -right-[-2%] text-[14px] text-gray-700
+          justify-center text-justify absolute
+           min-w-[180px] min-h-[100px] border rounded-lg
+            bg-red-100'>
+          {bigShoeDescp.part1.map((descp,index)=>(
+           <li key={index}>
+            {descp}
+           </li>
+          ))}
+          </div>
 
+          <div className='flex  flex-col p-2 bg-opacity-50
+           -left-[-2%] text-[14px] text-white
+          justify-center text-justify absolute
+          min-w-[180px] min-h-[100px] -bottom-[-18%] rounded-lg
+           bg-gray-800 '>
+          {bigShoeDescp.part2.map((descp,index)=>(
+           <li key={index}>
+            {descp}
+           </li>
+          ))}
+          </div>
 
-              </div>
-
-            ))}
-            {/* </Slider> */}
-            </Carousel>
-         
-
+       <div className='flex sm:gap-6 gap-4 absolute -bottom-[8%]  max-sm:px-6'>
+          {skinProducts.map((image, index) => (
+            <div key={index}>
+              <ShoeCard
+                index={index}
+                imgURL={image}
+                changeBigShoeImage={(shoe) => setbigShoeImg(shoe)}
+                changeBigShoeDescp={(shoe) => setbigShoeDescp(shoe)}
+                bigShoeImg={bigShoeImg}
+              />
+            </div>
+          ))}
         </div>
 
       </div>

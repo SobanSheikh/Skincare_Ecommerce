@@ -3,17 +3,47 @@ import {
   SuperQuality, Services, Hero, PopularProdcuts} 
   from "./sections"
 import Nav from "./components/Nav"
+import Cart from "./components/Cart"
+
+import { useState } from "react"
+import Product_Details from "./components/Product_Details"
+
 
 const App = () => {
+  const [cartOpen, setcartOpen] = useState(false);
+  
+
+  
+
+
+
+  
+
+  const toggleCart = () => {
+    setcartOpen(!cartOpen);
+  };
+ 
+
+  //for product details blur effect
+  const [showDetails, setShowDetails] = useState(false);
+  const handleClick = () => {
+    setShowDetails(!showDetails);
+  };
+
   return (
-    <main className="relative">
-      <Nav/>
+<div >
+    <main className='relative'>
+    
+      <Nav cartCheck={toggleCart}/>
+
+      
+      
       <section className="xl:padding-l wide:padding-r padding-b">
         <Hero/>
 
       </section>
       <section className="padding">
-        <PopularProdcuts/>
+        <PopularProdcuts  showDetails1={showDetails} handleClick1={handleClick}/>
       </section>
       <section className="padding">
         <SuperQuality/>
@@ -34,6 +64,10 @@ const App = () => {
         <Footer/>
       </section>
     </main>
+    <Cart cartView={cartOpen} changeCartView={toggleCart}   />
+    
+    </div>
+    
   )
 }
 

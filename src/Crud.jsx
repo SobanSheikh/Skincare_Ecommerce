@@ -2,9 +2,7 @@ import React from 'react'
 import { bigShoe1, customer1 } from './assets/images'
 import CrudCard from './CrudCard'
 import { useState, useEffect } from 'react'
-import Cart from './Cart'
-
-
+import Cart from './components/Cart'
 import axios from 'axios';
 
 const Crud = () => {
@@ -15,7 +13,7 @@ const Crud = () => {
   const [cartItems, setcartItems] = useState([])
   const options = {
     method: 'GET',
-    url: 'https://real-time-product-search.p.rapidapi.com/search',
+    url: 'https://real-time-product-search.p.rapidapi.com/search/aa',
     params: {
       q: 'Nike shoes',
       country: 'us',

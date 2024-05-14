@@ -1,16 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import Cart from './Cart.jsx'
 import Crud from './Crud.jsx'
 import './index.css'
 import New_App from './New_App.jsx'
+import { CartProvider } from './components/CartContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
+    <CartProvider>
+    <App />
+    </CartProvider>
     {/* <New_App /> */}
-    <Crud />
+    {/* <Crud /> */}
     {/* <Cart /> */}
   </React.StrictMode>,
 )
