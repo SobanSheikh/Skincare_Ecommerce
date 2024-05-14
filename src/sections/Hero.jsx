@@ -7,10 +7,6 @@ import { a9,a3,a1 } from '../assets/images';
 import Slider from 'react-slick';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import { skinProducts } from '../constants';
 
 
